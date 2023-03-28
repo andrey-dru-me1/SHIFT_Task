@@ -14,7 +14,7 @@ public class DesktopComputer extends Product {
 
     private FormFactor formFactor;
 
-    public DesktopComputer(Long id, long series, String producer, double price, long count, FormFactor formFactor) {
+    public DesktopComputer(int id, long series, String producer, double price, long count, FormFactor formFactor) {
         super(id, series, producer, price, count);
         this.formFactor = formFactor;
     }

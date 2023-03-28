@@ -14,7 +14,7 @@ public class HardDrive extends Product {
 
     private long volumeMB;
 
-    public HardDrive(Long id, long series, String producer, double price, long count, long volumeMB) {
+    public HardDrive(int id, long series, String producer, double price, long count, long volumeMB) {
         super(id, series, producer, price, count);
         this.volumeMB = volumeMB;
     }

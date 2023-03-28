@@ -14,7 +14,7 @@ public class Laptop extends Product {
 
     private Size sizeInch;
 
-    public Laptop(Long id, long series, String producer, double price, long count, Size sizeInch) {
+    public Laptop(int id, long series, String producer, double price, long count, Size sizeInch) {
         super(id, series, producer, price, count);
         this.sizeInch = sizeInch;
     }

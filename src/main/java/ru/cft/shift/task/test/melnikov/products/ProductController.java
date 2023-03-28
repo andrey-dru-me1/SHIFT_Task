@@ -46,4 +46,29 @@ public class ProductController {
         return ResponseEntity.ok("Successfully added");
     }
 
+
+    @PutMapping(value = "/edit/desktop/computer/{id}")
+    public ResponseEntity<String> editDesktopComputer(@PathVariable("id") int id, @RequestBody DesktopComputer desktopComputer) {
+        productService.editProduct(id, desktopComputer);
+        return ResponseEntity.ok("Successfully edited");
+    }
+
+    @PutMapping(value = "/edit/hard/drive/{id}")
+    public ResponseEntity<String> editHardDrive(@PathVariable("id") int id, @RequestBody HardDrive hardDrive) {
+        productService.editProduct(id, hardDrive);
+        return ResponseEntity.ok("Successfully edited");
+    }
+
+    @PutMapping(value = "/edit/laptop/{id}")
+    public ResponseEntity<String> editLaptop(@PathVariable("id") int id, @RequestBody Laptop laptop) {
+        productService.editProduct(id, laptop);
+        return ResponseEntity.ok("Successfully edited");
+    }
+
+    @PutMapping(value = "/edit/monitor/{id}")
+    public ResponseEntity<String> editMonitor(@PathVariable("id") int id, @RequestBody Monitor monitor) {
+        productService.editProduct(id, monitor);
+        return ResponseEntity.ok("Successfully edited");
+    }
+
 }

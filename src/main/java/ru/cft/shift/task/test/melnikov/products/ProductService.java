@@ -1,6 +1,7 @@
 package ru.cft.shift.task.test.melnikov.products;
 
 import jakarta.transaction.Transactional;
+import org.jetbrains.annotations.NotNull;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
@@ -23,6 +24,13 @@ public class ProductService {
 
     @Transactional
     public void addProduct(Product product) {
+        productRepository.save(product);
+    }
+
+    @Transactional
+    public void editProduct(int id, @NotNull Product product) {
+        productRepository.findById(id);
+        product.setId(id);
         productRepository.save(product);
     }
 

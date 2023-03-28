@@ -14,7 +14,7 @@ public class Monitor extends Product {
 
     private double diagonalInch;
 
-    public Monitor(Long id, long series, String producer, double price, long count, double diagonalInch) {
+    public Monitor(int id, long series, String producer, double price, long count, double diagonalInch) {
         super(id, series, producer, price, count);
         this.diagonalInch = diagonalInch;
     }
