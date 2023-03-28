@@ -8,6 +8,7 @@ import ru.cft.shift.task.test.melnikov.products.entities.HardDrive;
 import ru.cft.shift.task.test.melnikov.products.entities.Laptop;
 import ru.cft.shift.task.test.melnikov.products.entities.Monitor;
 
+import java.util.Collection;
 import java.util.List;
 
 @RestController
@@ -75,6 +76,16 @@ public class ProductController {
     public ResponseEntity<String> removeProduct(@PathVariable("id") int id) {
         productService.removeProduct(id);
         return ResponseEntity.ok("Product was removed");
+    }
+
+    @GetMapping(value = "get/product/{type}")
+    public ResponseEntity<Collection<Product>> findProductsByType(@PathVariable("type") String type) {
+        return ResponseEntity.ok(productService.findByType(type));
+    }
+
+    @GetMapping(value = "/get/id/{id}")
+    public ResponseEntity<Product> findProductById(@PathVariable("id") int id) {
+        return ResponseEntity.ok(productService.findById(id));
     }
 
 }
