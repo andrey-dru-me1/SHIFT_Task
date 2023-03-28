@@ -12,7 +12,7 @@ import lombok.Setter;
 @Setter
 @AllArgsConstructor
 @NoArgsConstructor
-public class Product {
+public abstract class Product {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
@@ -28,4 +28,7 @@ public class Product {
     public void setId(Long id) {
         this.id = id;
     }
+
+    public abstract String getType();
+
 }

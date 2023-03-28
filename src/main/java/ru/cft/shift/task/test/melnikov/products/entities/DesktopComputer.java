@@ -19,6 +19,11 @@ public class DesktopComputer extends Product {
         this.formFactor = formFactor;
     }
 
+    @Override
+    public String getType() {
+        return "desktopComputer";
+    }
+
     public enum FormFactor {
         DESKTOP,
         NETTOP,

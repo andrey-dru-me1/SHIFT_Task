@@ -18,4 +18,9 @@ public class HardDrive extends Product {
         super(id, series, producer, price, count);
         this.volumeMB = volumeMB;
     }
+
+    @Override
+    public String getType() {
+        return "hardDrive";
+    }
 }

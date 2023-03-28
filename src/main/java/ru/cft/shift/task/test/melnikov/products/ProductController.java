@@ -46,4 +46,14 @@ public class ProductController {
         return ResponseEntity.ok("Successfully added");
     }
 
+    @PostMapping(value = "add/product/{type}")
+    public ResponseEntity<String> addProduct(@PathVariable("type") String type, @RequestBody String json) {
+        try {
+            productService.addProductFromJson(type, json);
+        } catch (ClassNotFoundException e) {
+            return ResponseEntity.badRequest().body("Type is wrong.");
+        }
+        return ResponseEntity.ok("A product has added successfully!");
+    }
+
 }
