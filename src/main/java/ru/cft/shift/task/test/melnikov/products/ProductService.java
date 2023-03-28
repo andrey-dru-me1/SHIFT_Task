@@ -34,4 +34,9 @@ public class ProductService {
         productRepository.save(product);
     }
 
+    @Transactional
+    public void removeProduct(int id) {
+        productRepository.deleteById(id);
+    }
+
 }

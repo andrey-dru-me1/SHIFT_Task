@@ -71,4 +71,10 @@ public class ProductController {
         return ResponseEntity.ok("Successfully edited");
     }
 
+    @PutMapping(value = "/remove/product/{id}")
+    public ResponseEntity<String> removeProduct(@PathVariable("id") int id) {
+        productService.removeProduct(id);
+        return ResponseEntity.ok("Product was removed");
+    }
+
 }
